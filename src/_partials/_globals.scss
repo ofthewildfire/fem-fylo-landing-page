@@ -1,0 +1,24 @@
+@use "./variables" as *;
+
+* {
+	// outline: 1px solid rebeccapurple;
+	box-sizing: border-box;
+}
+
+.btn {
+	// display: block;
+	margin: 0 auto;
+	background-color: $Cyan;
+	padding: 0.5em 5em;
+	border-radius: 50px;
+	border: 5px solid transparent;
+}
+
+button {
+	cursor: pointer;
+	font-weight: 700;
+	font-family: $Raleway700;
+	&:is(:hover, :active, :focus) {
+		border: 5px dashed white;
+	}
+}

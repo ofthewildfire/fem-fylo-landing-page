@@ -1,0 +1,40 @@
+@use "../_partials/" as *;
+
+.heading_main {
+	display: flex;
+	background-color: $Dark-Blue-main-bg;
+	justify-content: space-between;
+	align-items: center;
+	// See! All you needed was carbs! Solved.
+	font-family: $Raleway400;
+
+	.logo {
+		svg {
+			transform: scale(0.65);
+		}
+	}
+
+	// Nav List
+
+	.nav_main {
+		margin-right: 1em;
+		.nav_list {
+			@include navigation-setting;
+			font-size: clamp(0.875rem, 0.8036rem + 0.3571vw, 1.125rem);
+			gap: 10px;
+			padding: 0;
+
+			.nav_item {
+				a {
+					text-decoration: none;
+					color: $White;
+
+					&:is(:hover, :focus, :active) {
+						color: $Cyan;
+						border: 1px dashed $White;
+					}
+				}
+			}
+		}
+	}
+}

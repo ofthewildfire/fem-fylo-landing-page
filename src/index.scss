@@ -1,0 +1,50 @@
+@use "./_partials/" as *;
+@use "./components/" as *;
+
+* {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	// outline: 2px solid white;
+}
+
+*::before,
+*::after {
+	border: 0;
+	margin: 0;
+	box-sizing: border-box;
+	padding: 0;
+}
+
+// CSS
+
+body {
+	overflow: visible;
+}
+
+main {
+	max-width: 100%;
+	margin: 0 auto;
+	display: grid;
+	gap: 5em;
+	padding: 0 2em;
+	background-color: $Dark-Blue-main-bg;
+}
+
+footer {
+	padding: 15em 2em 2.5em 2em;
+}
+
+// Media Query
+
+@media screen and (min-width: 60rem) {
+	body {
+		max-width: 1440px;
+		margin: 0 auto;
+	}
+
+	footer {
+		padding: 10em 2em 2.5em 2em;
+	}
+}

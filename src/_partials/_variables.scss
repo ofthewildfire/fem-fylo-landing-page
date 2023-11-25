@@ -1,0 +1,36 @@
+@use "./typography" as *;
+
+// Primary
+// (intro and email sign up background)
+$Dark-Blue-intro: #1c2431;
+//(main background)
+$Dark-Blue-main-bg: #181f2a;
+//(footer background)
+$Dark-Blue1: #0b1523;
+// (testimonials background)
+$Dark-Blue: #202a3c;
+
+// Accent
+
+//(inside call-to-action gradient)
+// $Cyan: #65e2d9;
+$Cyan: #367c77;
+//(inside call-to-action gradient)
+$Blue: #339ecc;
+//(error)
+$Light-Red: #ff4242;
+
+// Neutral
+
+$White: hsl(0, 0%, 100%);
+
+// Font-size
+
+$DefaultFontSize: 0.875rem;
+
+// Font-family
+$OpenSans400: "OpenSans400", sans-serif;
+$OpenSans700: "OpenSans700", sans-serif;
+// --------
+$Raleway400: "Raleway400", sans-serif;
+$Raleway700: "Raleway700", sans-serif;

@@ -1,0 +1,47 @@
+@use "../_partials/" as *;
+
+.hero {
+	color: $White;
+	line-height: 1.5;
+	text-align: center;
+	margin: 1em auto;
+	background-color: $Dark-Blue-main-bg;
+
+	// Image
+	.hero_img {
+		& > img {
+			display: block;
+			width: 100%;
+			margin: 0 auto;
+		}
+	}
+
+	.hero_title {
+		font-family: $Raleway700;
+		font-size: clamp(1.125rem, 0.875rem + 1.25vw, 2rem);
+	}
+
+	.hero_paragraph {
+		font-family: $OpenSans400;
+		margin: 2em 0;
+		opacity: 0.75;
+	}
+
+	.hero_btn {
+		display: block;
+		margin: 0 auto;
+		background-color: $Cyan;
+		padding: 1em 5em;
+		border-radius: 50px;
+		color: inherit;
+	}
+}
+
+// Media Query
+
+@media screen and (min-width: 60rem) {
+	.hero {
+		max-width: 850px;
+		margin: 0 auto;
+	}
+}

@@ -1,0 +1,93 @@
+@use "../_partials/" as *;
+
+footer {
+	background-color: $Dark-Blue1;
+	font-family: $OpenSans400;
+	color: $White;
+	// opacity: 0.75;
+	display: grid;
+	grid-template-columns: repeat(auto, 1fr);
+	gap: 1.25rem;
+	line-height: 1.5;
+
+	.footer_logo {
+		margin-top: 2em;
+	}
+
+	.wrapper-contacts {
+		.footer-col {
+			display: flex;
+			gap: 1.25rem;
+		}
+	}
+
+	& > .footer-col {
+		// Inside the containers
+		display: flex;
+		gap: 0.625rem;
+		// opacity: 0.75;
+
+		& > .socials {
+			width: 100%;
+			margin: 2em 0;
+			display: flex;
+			gap: 1.25rem;
+			justify-content: center;
+
+			& > .list-item > .link-item {
+				& > svg {
+					height: 1.5rem;
+					fill: $White;
+					// opacity: 0.75;
+
+					&:is(:hover, :focus, :active) {
+						fill: $Cyan;
+					}
+				}
+			}
+		}
+	}
+}
+
+.footer-col.links {
+	.footer-list {
+		.list-item {
+			& > .link-item {
+				color: $White;
+				text-decoration: none;
+
+				&:is(:hover, :focus, :active) {
+					color: $Cyan;
+					border: 1px dashed $White;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 60rem) {
+	footer {
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+
+		& > .footer_logo {
+			grid-column: 1/-1;
+		}
+
+		& > .footer-col.links {
+			width: max-content;
+			margin: 0 auto;
+		}
+		& > .footer-col > .footer-list.socials {
+			margin: 0 auto;
+		}
+
+		.wrapper-contacts {
+			margin: 0 auto;
+		}
+
+		.footer-col.location {
+			grid-column: 1 /3;
+		}
+	}
+}

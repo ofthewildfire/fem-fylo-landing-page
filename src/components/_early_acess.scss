@@ -1,0 +1,108 @@
+@use "../_partials/" as *;
+
+.wrapper-early-access {
+	position: relative;
+	margin-top: 10rem;
+}
+
+.early_access {
+	position: absolute;
+	transform: translateY(-50%);
+
+	//
+	display: grid;
+	background-color: $Dark-Blue-intro;
+	color: $White;
+	margin: 1em auto;
+	font-family: $OpenSans400;
+	text-align: center;
+	line-height: 1.5;
+	border-radius: 10px;
+	gap: 20px;
+	padding: 2em;
+
+	.early_acesss-heading {
+		display: grid;
+		gap: 20px;
+
+		h2 {
+			font-family: $Raleway700;
+			margin: 1em 0 0 0;
+		}
+
+		p {
+			font-family: $OpenSans400;
+			opacity: 0.75;
+		}
+	}
+
+	.input {
+		display: grid;
+		gap: 20px;
+
+		input[type="text"] {
+			border-radius: 50px;
+			padding: 1.25em 0;
+			width: 100%;
+			text-indent: 1.25rem;
+			font-family: $OpenSans400;
+		}
+
+		button {
+			color: inherit;
+			padding: 1.25em 0;
+			width: 100%;
+			font-size: clamp(0.75rem, 0.7143rem + 0.1786vw, 0.875rem);
+		}
+	}
+	#error {
+		color: #ff00008e;
+		position: absolute;
+		bottom: 0.5em;
+		left: 2.5em;
+		// Change font-size! Legit cannot be bothered to go and solve this now.
+		font-size: 0.95rem;
+	}
+}
+
+// Media Query
+
+@media screen and (min-width: 60rem) {
+	.wrapper-early-access {
+		position: relative;
+	}
+
+	.early_access {
+		max-width: 850px;
+		//
+		position: absolute;
+		transform: translateY(-50%);
+		left: 0;
+		right: 0; //
+		.input {
+			grid-template-columns: 60% 1fr;
+			align-items: center;
+			//
+			input[type="text"] {
+				border-radius: 50px;
+				padding: 1em 0;
+				width: 100%;
+				border: 3px solid transparent;
+			}
+			//
+
+			button {
+				padding: 1em 0;
+				// This is frustrating, but, finish it and revise, the reason it was not working earlier i because of the specifity, it was lower than the above outside of the MQ - be careful, hey? I am giving you a pass this week, but, cmon girl!
+			}
+		}
+	}
+
+	#error {
+		color: #ff00008e;
+		position: absolute;
+		bottom: 0.5em;
+		left: 2.5em;
+		font-size: 1.125rem;
+	}
+}
