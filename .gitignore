@@ -24,4 +24,7 @@ dist-ssr
 *.sw?
 
 # lol why aren't u here by default? 
-node_modules
+# this one is but lmao the title
+node_modules 
+.vercel
+vercel
