@@ -1,7 +1,7 @@
 <a name="readme-top"></a>
 
 <br />
-<h3 align="center">Frontend Mentor || Fylo Dark Landing Page</h3>
+<h1 align="center">Frontend Mentor || Fylo Dark Landing Page</h1>
 
   <p align="center">
    A challenge from the site frontendmentor.io // a dark themed landing page.
