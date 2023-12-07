@@ -265,8 +265,9 @@
           </p>
         </div>
         <div class="input">
-          <label for="email-address">
-            <input type="text" name="email-address" id="email-address">
+          <label for="email-address" aria-label="email-address">
+            <!-- hmmmmm ---- i need lunch before i can correctly evaluate if this is a weird thing to do. -->
+            <input aria-labelledby="email-address" type="text" name="email-address" id="email-address">
           </label>
           <button class="btn" id="get-started-btn">
             Get Started For Free
