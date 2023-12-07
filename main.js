@@ -15,13 +15,8 @@ getStartedButton.addEventListener("click", (e) => {
 	emailAddressInput.style.border = "2px solid yellow"
 
 	// Check email
-
-	if (!emailRegex.test(inputEmailValue)) {
-		errorDisplay.textContent = "Please enter your email address!"
-	} else {
-		// clear the error message if its fine
-		errorDisplay.textContent = ""
-	}
+	// Changed to ternary, because I like them more and they are easier for me to read.
+	!emailRegex.test(inputEmailValue)
+		? (errorDisplay.textContent = "Please enter your email address!")
+		: (errorDisplay.textContent = "")
 })
-
-// Add the form validation aspect here. Too lazy to bother now. But, yep.
