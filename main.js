@@ -5,6 +5,7 @@ import "./src/index.scss"
 const emailAddressInput = document.querySelector("#email-address")
 const getStartedButton = document.querySelector("#get-started-btn")
 const errorDisplay = document.querySelector("#error")
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 getStartedButton.addEventListener("click", (e) => {
 	e.preventDefault()
@@ -15,8 +16,11 @@ getStartedButton.addEventListener("click", (e) => {
 
 	// Check email
 
-	if (inputEmailValue === "" || inputEmailValue === null) {
+	if (!emailRegex.test(inputEmailValue)) {
 		errorDisplay.textContent = "Please enter your email address!"
+	} else {
+		// clear the error message if its fine
+		errorDisplay.textContent = ""
 	}
 })
 
