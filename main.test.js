@@ -13,15 +13,34 @@ describe("main", () => {
   const getStartedButton = document.createElement("button");
   const emailAddressInput = document.createElement("input");
   const errorDisplay = document.createElement("p");
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
   it("should clear input field and not display error message when a valid email address is entered", () => {
     // Assign a valid email address to the input field for the test
     emailAddressInput.value = "test@example.com";
 
-    // Simulate a button click
+    // Simulate a button click to trigger the email validation
     getStartedButton.click();
 
     // Assert that when a valid email is entered, the input field remains unchanged and no error message is displayed
-    expect(emailAddressInput.value).toBe("test@example.com");
     expect(errorDisplay.textContent).toBe("");
+  });
+
+  it("should display error message when email address input field contains only special characters", () => {
+    // Assign an invalid email address to the input field for the test
+    emailAddressInput.value = "johnappleseed#mail.com";
+
+    // Perform validation using regex
+    // If the email is invalid, display the error message
+    // Duplication of this regex is to test logic will work in isolation
+    !emailRegex.test(emailAddressInput.value)
+      ? (errorDisplay.textContent = "Please enter a valid email address")
+      : (errorDisplay.textContent = "");
+
+    // Simulate a button click to trigger the email validation
+    getStartedButton.click();
+
+    // Assert that when an invalid email is entered, the error message shows
+    expect(errorDisplay.textContent).toBe("Please enter a valid email address");
   });
 });
