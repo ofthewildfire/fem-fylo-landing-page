@@ -14,13 +14,13 @@ describe("main", () => {
   const emailAddressInput = document.createElement("input");
   const errorDisplay = document.createElement("p");
   it("should clear input field and not display error message when a valid email address is entered", () => {
-    // Assign value with test strng input
+    // Assign a valid email address to the input field for the test
     emailAddressInput.value = "test@example.com";
 
-    // Simulates a button click
+    // Simulate a button click
     getStartedButton.click();
 
-    // Assert that when the email is entered, no error string value will display
+    // Assert that when a valid email is entered, the input field remains unchanged and no error message is displayed
     expect(emailAddressInput.value).toBe("test@example.com");
     expect(errorDisplay.textContent).toBe("");
   });
