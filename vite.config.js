@@ -3,3 +3,5 @@ export default defineConfig({
     environment: "jsdom",
   },
 });
+
+// The above tells Vitest to use the JSDOM environment for running the tests.
