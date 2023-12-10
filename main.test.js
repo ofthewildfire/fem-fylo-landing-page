@@ -4,11 +4,9 @@
 
 // Default test behavior runs in node.js and not browser. Need to install and use jsdom to simulate the DOM environment and make Vitest aware of this by adding the comment above
 
-// started integrating unit tests for the input validation using Vitest. Will send linkies on this
+// Started integrating unit tests for the input validation using Vitest. Will send linkies on this
 
 import { describe, expect, it } from "vitest";
-
-// normally you start with "test", but here I've used "describe" to define a new suite which allows for nested tests to make things more organized
 
 /* 
 
@@ -20,6 +18,8 @@ Here, we will create three tests to indicate typical user behaviour and interact
 
 */
 
+// Normally you start with "test", but here I've used "describe" to define a new suite which allows for nested tests to make things more organized
+
 describe("main", () => {
   // Create relevant elements for the tests
   const getStartedButton = document.createElement("button");
@@ -27,6 +27,7 @@ describe("main", () => {
   const errorDisplay = document.createElement("p");
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+  // FIRST TEST
   it("should clear input field and not display error message when a valid email address is entered", () => {
     // Assign a valid email address to the input field for the test
     emailAddressInput.value = "test@example.com";
@@ -38,10 +39,12 @@ describe("main", () => {
     // Simulate a button click to trigger the email validation
     getStartedButton.click();
 
-    // Assert that when a valid email is entered, the input field remains unchanged and no error message is displayed
+    // Assert that when a valid email is entered, the input field clears and no error message is displayed
+    expect(emailAddressInput.textContent).toBe("");
     expect(errorDisplay.textContent).toBe("");
   });
 
+  // SECOND TEST
   it("should display error message when an invalid email address is attempted to be submitted", () => {
     // Assign an invalid email address to the input field for the test - using the same email address as from the mockup (active-states)
     emailAddressInput.value = "johnappleseed#mail.com";
@@ -56,10 +59,12 @@ describe("main", () => {
     // Simulate a button click to trigger the email validation
     getStartedButton.click();
 
-    // Assert that when an invalid email is entered, the error message shows
+    // Assert that when an invalid email is entered, the input field clears and the error message is displayed
+    expect(emailAddressInput.textContent).toBe("");
     expect(errorDisplay.textContent).toBe("Please enter a valid email address");
   });
 
+  // THIRD TEST
   it("should display error message when an empty input is attempted to be submitted", () => {
     // Assign an invalid email address to the input field for the test
     emailAddressInput.value = "";
@@ -73,7 +78,8 @@ describe("main", () => {
     // Simulate a button click to trigger the email validation
     getStartedButton.click();
 
-    // Assert that when an empty input value is entered, the error message shows
+    // Assert that when an empty input value is entered,the input field clears and an error message is displayed
+    expect(emailAddressInput.textContent).toBe("");
     expect(errorDisplay.textContent).toBe("Please enter a valid email address");
   });
 });
