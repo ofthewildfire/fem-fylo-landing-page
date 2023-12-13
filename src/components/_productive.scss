@@ -1,89 +1,89 @@
 @use "../_partials/" as *;
 
 .stay_productive {
-	color: $White;
-	display: grid;
-	gap: 20px;
-	line-height: 1.5;
+  color: $White;
+  display: grid;
+  gap: 20px;
+  line-height: 1.5;
 
-	.stay_productive-img {
-		img {
-			display: block;
-			max-width: 100%;
-			margin: 0 auto;
-		}
-	}
+  .stay_productive-img {
+    img {
+      display: block;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+  }
 
-	.stay_productive-text {
-		display: grid;
-		gap: 20px;
-		text-align: left;
+  .stay_productive-text {
+    display: grid;
+    gap: 20px;
+    text-align: left;
 
-		.stay_productive-title {
-			font-family: $Raleway700;
-		}
+    .stay_productive-title {
+      font-family: $Raleway700;
+    }
 
-		.stay_productive_paragraph {
-			opacity: 0.75;
-			font-family: $OpenSans400;
-		}
-	}
+    .stay_productive_paragraph {
+      opacity: 0.75;
+      font-family: $OpenSans400;
+    }
+  }
 
-	// Link
+  // Link
 
-	.stay_productive_link {
-		display: flex;
-		gap: 10px;
-		align-items: center;
-		justify-content: flex-start;
-		border-bottom: 1px solid $Cyan;
-		max-width: max-content;
-		margin-block-end: 0.5em;
+  .stay_productive_link {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+    border-bottom: 1px solid $Cyan;
+    max-width: max-content;
+    margin-block-end: 0.5em;
 
-		&:is(:focus, :hover, :active) {
-			border-bottom: 1px solid $White;
+    &:is(:focus, :hover, :active) {
+      border-bottom: 1px solid $White;
 
-			svg {
-				// border: 2px solid red;
-				& > g {
-					& > g {
-						& > use:nth-child(2) {
-							fill: $White;
-						}
-					}
-				}
-			}
-		}
-		// I have done this for the border bottom to only span the length of the link text.
+      svg {
+        // border: 2px solid red;
+        & > g {
+          & > g {
+            & > use:nth-child(2) {
+              fill: $White;
+            }
+          }
+        }
+      }
+    }
+    // I have done this for the border bottom to only span the length of the link text.
 
-		a {
-			font-family: $Raleway400;
-			letter-spacing: 0.125rem;
-			color: $Cyan;
-			text-decoration: none;
+    a {
+      font-family: $Raleway400;
+      letter-spacing: 0.125rem;
+      color: #62e0d9; // changed this to same color as svg stroke to meet background-foreground accessibility requirements
+      text-decoration: none;
 
-			&:is(:hover, :active, :focus) {
-				color: $White;
-			}
-		}
-	}
+      &:is(:hover, :active, :focus) {
+        color: $White;
+      }
+    }
+  }
 
-	.stay_productive_link * {
-		&:is(:hover, :focus, :active) {
-			color: $White;
-		}
-	}
+  .stay_productive_link * {
+    &:is(:hover, :focus, :active) {
+      color: $White;
+    }
+  }
 }
 
 // Media Query
 
 @media screen and (min-width: 60rem) {
-	.stay_productive {
-		grid-template-columns: repeat(2, 1fr);
+  .stay_productive {
+    grid-template-columns: repeat(2, 1fr);
 
-		.stay_productive-text {
-			display: grid;
-			place-content: center;
-		}
-	}
+    .stay_productive-text {
+      display: grid;
+      place-content: center;
+    }
+  }
 }
